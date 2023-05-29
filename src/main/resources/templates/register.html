@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+    <style>
+        label {
+            width: 200px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        input[type=text], input[type=password], select {
+            display: inline-block;
+            width: 300px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Register</h1>
+    <form method="post" th:action="@{/register}" th:object="${user}">
+        <label>Civilité :</label>
+        <input type="radio" value="M" th:field="*{gender}"/> Monsieur
+        <input type="radio" value="MME" th:field="*{gender}"/> Madame
+        <input type="radio" value="MELLE" th:field="*{gender}"/> Mademoiselle
+        <br/>
+
+        <label>Nom :</label>
+        <input th:field="*{name}">
+        <br/>
+
+        <label>Email :</label>
+        <input th:field="*{mail}">
+        <br/>
+
+        <label>Nom :</label>
+        <input type="password" th:field="*{password}">
+        <br/>
+
+        <label>Marié :</label>
+        <input type="checkbox" th:field="*{isMarried}">
+        <br/>
+
+        <label>Date de naissance :</label>
+        <input type="date" th:field="*{dateNaissance}">
+        <br/>
+
+        <label>Profession :</label>
+        <input th:field="*{profession}">
+        <br/>
+
+        <label>Commentaire :</label>
+        <textarea th:field="*{commentary}"/>
+
+    </form>
+</body>
+</html>
