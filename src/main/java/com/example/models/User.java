@@ -8,7 +8,7 @@ public class User {
     private String mail;
     private String password;
     private boolean isMarried;
-    private Date dateNaissance;
+    private String dateNaissance;
     private String profession;
     private String commentary;
 
@@ -52,11 +52,11 @@ public class User {
         isMarried = married;
     }
 
-    public Date getDateNaissance() {
+    public String    getDateNaissance() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(Date dateNaissance) {
+    public void setDateNaissance(String dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 

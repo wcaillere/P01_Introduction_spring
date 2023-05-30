@@ -6,9 +6,10 @@
 
     <style>
         label {
-            width: 200px;
+            width: 300px;
             margin: 5px;
             display: inline-block;
+            text-align: left;
         }
 
         input[type=text], input[type=password], select {
@@ -35,7 +36,7 @@
         <input th:field="*{mail}">
         <br/>
 
-        <label>Nom :</label>
+        <label>Mot de passe :</label>
         <input type="password" th:field="*{password}">
         <br/>
 
@@ -43,16 +44,22 @@
         <input type="checkbox" th:field="*{isMarried}">
         <br/>
 
-        <label>Date de naissance :</label>
-        <input type="date" th:field="*{dateNaissance}">
+        <label>Date de naissance (yyyy-mm-dd) :</label>
+        <input type="text" th:field="*{dateNaissance}">
         <br/>
 
         <label>Profession :</label>
-        <input th:field="*{profession}">
+        <select th:field="*{profession}">
+            <!-- écrire les options en utilisant la liste des professions envoyée par le controller -->
+            <option th:each="item: ${professionList}" th:value="${item}" th:text="${item}"></option>
+        </select>
         <br/>
 
         <label>Commentaire :</label>
-        <textarea th:field="*{commentary}"/>
+        <textarea rows="5" cols="25" th:field="*{commentary}"></textarea>
+
+        <br/>
+        <button type="submit">Enregistrer</button>
 
     </form>
 </body>

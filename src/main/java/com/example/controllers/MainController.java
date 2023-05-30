@@ -5,16 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 // Préciser que cette classe est un contrôleur
 @Controller
-public class Main {
-
-    // Indique une demande de type GET sur l'url "/"
-    @GetMapping("/")
-    public String index() {
-        return "index";
-    }
-
-    @GetMapping("/register")
+public class MainController {
+    @GetMapping("/test")
     public String register() {
-        return "register";
+        return "index";
     }
 }
