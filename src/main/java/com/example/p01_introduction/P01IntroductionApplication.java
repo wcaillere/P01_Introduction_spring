@@ -1,5 +1,6 @@
 package com.example.p01_introduction;
 
+import com.example.models.Society;
 import com.example.models.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,9 +25,11 @@ public class P01IntroductionApplication {
     public String register(Model model) {
         // Instance d'utilisateur passée à la vue
         User user = new User();
+        Society society = new Society();
 
         // Envoyer cette instance à la vue
         model.addAttribute("user", user);
+        model.addAttribute("society", society);
 
         List<String> professionList = Arrays.asList("Professeur", "Commercial", "Technicien");
         model.addAttribute("professionList", professionList);
@@ -35,8 +38,9 @@ public class P01IntroductionApplication {
     }
 
     @PostMapping("/register")
-    public String RegisterPost(@ModelAttribute("user") User user) {
+    public String RegisterPost(@ModelAttribute("user") User user, @ModelAttribute("society") Society society) {
         System.out.println(user);
+        System.out.println(society);
         return "register_post";
     }
 

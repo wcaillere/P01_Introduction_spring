@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <div style="text-align: center">
-        <p>Confirmation</p>
-        <a href="register">Retour</a>
+    <div style="text-align: center; margin-top: 100px">
+        <span>Civilité : </span>
+        <span th:text="${user.gender}"></span>
+        <br/>
+
+        <span>Nom : </span>
+        <span th:text="${user.name}"></span>
+        <br/>
+
+        <span>Email : </span>
+        <span th:text="${user.mail}"></span>
+        <br/>
+
+        <span>Mot de passe : </span>
+        <span th:text="${user.password}"></span>
+        <br/>
+
+        <span>Est marié(e) : </span>
+        <span th:text="${user.isMarried}"></span>
+        <br/>
+
+        <span>Date de Naissance : </span>
+        <span th:text="${user.dateNaissance}"></span>
+        <br/>
+
+        <span>Profession : </span>
+        <span th:text="${user.profession}"></span>
+        <br/>
+
+        <span>Nom de la société : </span>
+        <span th:text="${society.societyName}"></span>
+        <br/>
+
+        <span>Commentaires : </span>
+        <span th:text="${user.commentary}"></span>
+        <br/>
+
+        <a href="register" style="margin-top: 20px">Retour</a>
     </div>
 </body>
 </html>
